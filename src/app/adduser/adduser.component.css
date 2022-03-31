@@ -1,0 +1,47 @@
+input[type=text], input[type=password],Usertype {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  .type{
+    width: 100%;
+    padding: 12px 20px;
+    margin: 20px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  
+  button {
+    /* position:absolute; */
+    background-color: #1c2af3;
+    color: white;
+    padding: 12px 18px;
+    margin: 20px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+  }
+  
+  button:hover {
+    opacity: 0.8;
+  }
+  
+  .container {
+      position:fixed;
+ /* background-image: url(./img_avatar2.png);  */
+ background-repeat: no-repeat;
+ background-position:left;
+ background-size:contain;
+ /* background-color:papayawhip; */
+    margin:auto;
+    margin:12%;
+
+    padding: 14px;
+    padding-left:29%;
+    
+  }
+ 

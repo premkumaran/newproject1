@@ -1,0 +1,25 @@
+<div class="container">
+
+    <tr>
+        <td>Username</td>
+        <td><input type="text" [(ngModel)]="detail.Username"> </td>
+    </tr>
+    <tr>
+        <td>Password</td>
+        <td><input type="Password" [(ngModel)]="detail.Password"> </td>
+    </tr>
+    <tr>
+        <td>User Type</td>
+        <td><select name="Usertype" [(ngModel)]= "detail.Usertype">
+            <option *ngIf="!istaff && !istudent" value="staff">Staff</option>
+            <option value="student">Student</option>
+            
+          </select>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><input type="button" value="Add" (click)="Add()"> </td>
+    </tr>
+
+</div>

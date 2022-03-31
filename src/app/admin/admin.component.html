@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+            <H1></H1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/staff" >Staff Details</a>
+                </li>
+            </ul> -->
+            <!-- <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/student" >Student Details</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="/adduser" >Add User</a>
+                </li>
+            </ul> -->
+            <br>
+            <!-- <form class="d-flex" style="text-align: right;">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-warning" type="submit">Search</button>
+            </form> -->
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02"></div>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" routerLink="logout" (click)="logout()">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<br>
+<div>
+    <td>User Details</td>
+    <td *ngIf="! isstudent" class="type">Usertype</td>
+    <td *ngIf="! isstudent" class="type"> 
+        <select (change)= "search($event)">
+            <option *ngIf="! isstaff && ! isstudent && ! isadmin"  value="Alldetails">Alldetails</option> 
+            <option *ngIf="! isstaff && ! isstudent && ! isadmin"  value="admin">Admin</option>
+            <option *ngIf="! isstaff && !isstudent"  value="staff">Staff</option>
+            <option *ngIf="! isstudent"  value="student">Student</option>
+        </select>
+    </td>
+    <td *ngIf="! isstudent" class="search">Search</td>
+    <td *ngIf="! isstudent" class="search"><input type="text" placeholder="filter the text" [(ngModel)]="textsearch">  </td>
+    <td class="user"> <a *ngIf="! isstudent" routerLink="/adduser"> AddUser</a> </td>
+</div>
+<br>
+<div class="table-responsive">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+            <tr>
+                <th>Username</th>
+                <th>Usertype</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let m of Admindetails | filter:textsearch">
+                <td>{{m.Username}}</td>
+                <td>{{m.Usertype}}</td>
+                <td>{{m.Password}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
